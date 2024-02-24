@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h1 Add Student
+  form(action='/students', method='POST')
+    div.form-group
+      label(for='studentNumber') Student ID Number
+      input#studentNumber.form-control(name='studentNumber', type='text', required='true')
+    div.form-group
+      label(for='firstName') Name
+      input#firstName.form-control(name='firstName', type='text', required='true')
+    div.form-group
+      label(for='firstName') Middle Name
+      input#firstName.form-control(name='middleName', type='text', required='true')  
+    div.form-group
+      label(for='lastName') Last Name
+      input#lastName.form-control(name='lastName', type='text', required='true')
+    div.form-group
+      label(for='emailAddress') Email Address
+      input#emailAddress.form-control(name='emailAddress', type='text', required='true')
+    button.btn.btn-primary(type='submit') Add Student
+  a.btn.btn-secondary(href='/students') Cancel
