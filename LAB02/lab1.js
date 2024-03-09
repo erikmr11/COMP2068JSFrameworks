@@ -1,0 +1,76 @@
+// prompt() is used to get user input.
+// The value entered by the user is stored in userSelection  variable.
+userSelection = prompt("ROCK, PAPER, OR SCISSORS");
+// Now we generate a random number.
+// Math.random() generates a random number between 0 and 1.
+// We store the random number in a variable named num.
+// If the random number should be stored in the computerSelection variable then change num to computerSelection and remove the below if else part.
+num = Math.random();
+// If the random number is between 0 - 0.34 then the computerSelection is PAPER.
+if(num<=0.34)
+{
+  computerSelection = "PAPER";
+}
+// Else if the random number is between 0.35 to 0.67 then the computerSelection is SCISSORS.
+else if(num>=0.35 && num<=0.67)
+{
+  computerSelection = "SCISSORS";
+}
+// else if the random number is between 0.68 to 1 then the computerSelection is ROCK.
+else
+{
+  computerSelection = "ROCK";
+}
+// Now using console.log() we print the values of userSelection and computerSelection.
+console.log(userSelection,computerSelection)
+
+// If both userSelection and computerSelection are equal then we print its a tie message.
+if(userSelection==computerSelection)
+{
+  console.log("It's a tie")
+}
+
+// Else if the user selected Rock
+else if(userSelection=="ROCK")
+{
+  // and if the computer selected scissors then we print user wins.
+  if(computerSelection=="SCISSORS")
+  {
+    console.log("User Wins");
+  }
+  // and if the computer selected paper then we print computer wins message.
+  else
+  {
+    console.log("Computer Wins");
+  }
+}
+
+// If the user selected paper
+else if(userSelection=="PAPER")
+{
+  // and if the computer selected rock then we print user wins.
+  if(computerSelection=="ROCK")
+  {
+    console.log("User Wins");
+  }
+  // and if the computer selected scissors then we print computer wins message.
+  else
+  {
+    console.log("Computer Wins");
+  }
+}
+
+// If the user selected scissors
+else
+{
+    // and if the computer selected paper then we print user wins.
+  if(computerSelection=="PAPER")
+  {
+    console.log("User Wins");
+  }
+  // and if the computer selected rock then we print computer wins message.
+  else
+  {
+    console.log("Computer Wins");
+  }
+}
