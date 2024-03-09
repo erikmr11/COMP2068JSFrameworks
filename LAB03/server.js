@@ -4,9 +4,8 @@ const connect = require('connect');
 // url module
 const url = require('url');
 
-const calculate = (url) => {
+const calculate = (params) => {
     // parsing the url
-    const params = new URLSearchParams(url.search);
     const method = params.get('method');
     const x = Number(params.get('x'));
     const y = Number(params.get('y'));
@@ -31,18 +30,17 @@ const app = connect ();
 
 //defining middleware function
 app.use ((req, res, next) => {
+    
+    const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
 
-    if (req.url === '/lab03') {
     //this will calculate the result based on URL params
-    const result = calculate(url.parse (req.url, true));
+    const result = calculate(parsedUrl.searchParams);
 
     //displaying the result 
     res.writeHead(200, {'Content-Type' : 'text/plain'});
     res.write(result);
     res.end();
-    } else {
-        next ();
-    }
+   
 });
 
 app.listen(3000, () => {
