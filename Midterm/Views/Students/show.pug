@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  h1 Student Information
+  p
+    strong Student ID Number:
+    | #{student.studentNumber}
+  p
+    strong Name:
+    | #{student.firstName}
+  p
+    strong Middle Name:
+    | #{student.lastName}
+  p
+    strong Last Name:
+    | #{student.lastName}
+  p
+    strong Email Address:
+    | #{student.emailAddress}
+  a.btn.btn-primary(href='/students') Back to All Students
